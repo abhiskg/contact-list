@@ -2,6 +2,7 @@ import { Form, FormGroup, Label, Input, Row, Col, Button } from "reactstrap";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCreateContact } from "../../../hooks/useContactsData";
 
 const ContactSchema = z.object({
   name: z.string().min(1, { message: "Please enter your name" }),
@@ -13,6 +14,8 @@ const ContactSchema = z.object({
 type ContactSchemaType = z.infer<typeof ContactSchema>;
 
 export default function ContactForm() {
+  const { mutate, isLoading } = useCreateContact();
+
   const {
     register,
     handleSubmit,
@@ -28,8 +31,7 @@ export default function ContactForm() {
   const { ref: addressRef, ...registerAddress } = register("address");
 
   const handleContact: SubmitHandler<ContactSchemaType> = (data) => {
-    // mutate(data);
-    console.log(data);
+    mutate(data);
     reset();
   };
 

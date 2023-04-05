@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/v1/contact", contact);
+app.use("/api/v1", contact);
 
 dbConnect()
   .then(() => {
