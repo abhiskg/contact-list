@@ -1,0 +1,23 @@
+{
+  "name": "contact-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhiskg/contact-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhiskg/contact-list/issues"
+  },
+  "homepage": "https://github.com/abhiskg/contact-list#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
