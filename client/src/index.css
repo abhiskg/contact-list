@@ -1,0 +1,4 @@
+.custom-container {
+  width: min(1200px, 95%);
+  margin-inline: auto;
+}

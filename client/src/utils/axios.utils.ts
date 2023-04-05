@@ -1,6 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 
-const client = axios.create({ baseURL: `http://localhost:5000` });
+const client = axios.create({
+  baseURL: `https://contact-list-tau-sage.vercel.app`,
+});
 
 export const request = async ({ ...options }) => {
   const onSuccess = (response: AxiosResponse) => {

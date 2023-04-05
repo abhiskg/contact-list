@@ -2,11 +2,15 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { request } from "../utils/axios.utils";
 import { toast } from "react-hot-toast";
 
-type ContactDataTypes = {
+type ContactInputTypes = {
   name: string;
   email: string;
   phoneNo: string;
   address: string;
+};
+
+type ContactDataTypes = ContactInputTypes & {
+  _id: string;
 };
 
 const fetchAllContactsData: () => Promise<ContactDataTypes[]> = () => {
@@ -17,7 +21,7 @@ export const useContactsData = () => {
   return useQuery(["contacts"], () => fetchAllContactsData());
 };
 
-const createNewContact = (products: ContactDataTypes) => {
+const createNewContact = (products: ContactInputTypes) => {
   return request({
     url: `/api/v1/contact/new`,
     method: "post",

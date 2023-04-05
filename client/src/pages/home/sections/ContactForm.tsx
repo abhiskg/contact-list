@@ -37,6 +37,7 @@ export default function ContactForm() {
 
   return (
     <div>
+      <h2>Contact Form</h2>
       <Form onSubmit={handleSubmit(handleContact)}>
         <Row>
           <Col md={6}>
@@ -90,7 +91,7 @@ export default function ContactForm() {
           {errors.address?.message && <p>{errors.address?.message}</p>}
         </FormGroup>
 
-        <Button>Submit</Button>
+        <Button color='primary'>Submit</Button>
       </Form>
     </div>
   );
